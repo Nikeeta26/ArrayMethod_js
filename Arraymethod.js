@@ -140,3 +140,24 @@ let max=number.reduce((rew,cur)=>
    }
 });
 console.log(max);
+
+/**************check if all no in our array are multiple of 10 or not**********/
+let Arr=[8,5,4,3,79,2,1];
+let N=Arr.every((el)=>{
+    (el%10==0)
+  
+});
+console.log(N);
+
+/******find min no in array********** */
+let m=[6,4,3,2];
+let M=m.reduce((min,el)=>{
+  if(min<el)
+  {
+    return min;
+  }
+  else{
+    return el;
+  }
+});
+console.log(M);
