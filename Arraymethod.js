@@ -161,3 +161,75 @@ let M=m.reduce((min,el)=>{
   }
 });
 console.log(M);
+
+
+/**Qs1.Square and sum the array elements using  the arrowfunction and then find  theaverage ofthe array */
+let a=[3,5,6,8,9];
+let square=a.map((el)=>{
+    //console.log(el*el);
+   return el*el;
+});
+console.log(square);
+let sum=square.reduce((pre,cur)=>{
+    //console.log((pre+cur)/a.length);
+ return (pre+cur)/a.length;
+});
+console.log(sum);
+
+/**Qs2.Create a new array using the map function whose each element isequal to the original element plus 5 */
+let arr=[1,2,3,4,5,6,7,8,9];
+let map=arr.map((el)=>{
+    return el+5;
+});
+console.log(map);
+
+/**Qs3.Create a new array whose elements are in uppercase of words present in the original array */
+let Arr=['niik',"hghjf","hdkdjg","jfdf","ebfejh"];
+
+let Upper=Arr.filter((el)=>{
+  console.log( el.toUpperCase());
+});
+
+
+/**Qs4. Write a function called doubleAndReturnArgs which accepts an array and a
+variable number of arguments. The function should return a new array with the original
+array values and all of the additional arguments doubled.
+ */
+let  doubleAndReturnArgs=(arr,...args)=>[
+     ...arr,
+     ...args.map((v)=>v*2)
+];
+console.log(doubleAndReturnArgs([2,4,5,6],8,9));
+console.log(doubleAndReturnArgs([1,3,7,6],0,9));
+
+/**Qs5. Write a function called mergeObjects that accepts two objects and returns a new
+object which contains all the keys and values of the first object and second object. */
+let obj1={
+    n:"nik",
+    a:21,
+    c:"tybc",
+    s:"math"
+};
+
+let obj2={
+    name:"shiv",
+    age:23,
+    class:"mcs",
+    subject:"math"
+};
+
+let mergeObjects={...obj1,...obj2};
+console.log(mergeObjects);
+/************* or *************** */
+let mergeObject=(obj1,obj2)=>({...obj1,...obj2});
+console.log(mergeObject({
+    n:"nik",
+    a:21,
+    c:"tybcs",
+    s:"math"
+},{
+    name:"shiv",
+    age:23,
+    class:"mcs",
+    subject:"math"
+}));
